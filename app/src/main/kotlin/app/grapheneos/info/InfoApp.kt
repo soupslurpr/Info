@@ -34,6 +34,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
+import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteItem
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldDefaults
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteType
@@ -158,10 +159,10 @@ fun InfoApp() {
     val layoutDirection = LocalLayoutDirection.current
 
     NavigationSuiteScaffold(
-        navigationSuiteItems = {
+        navigationItems = {
             navSuiteItemScreens.forEach { navSuiteItemScreen ->
                 val selected = navSuiteItemScreen == navSuiteItemScreenSelected
-                item(
+                NavigationSuiteItem(
                     selected = selected,
                     onClick = {
                         if (navSuiteItemScreenSelected != null) {
